@@ -10,10 +10,16 @@
 <body>
    <h1>iPhoto</h1><hr>
 <h4>Фото</h4>
+   <form action="/" method="get">
+       Поиск по названию: <input type="text" name="title"><br>
+       <input type="submit" value="Поиск"/>
+   </form>
 <#list photos as photo>
     <div>
-        <p><b>${photo.title}</b>${photo.price} руб. | <a href="/photos/${photo.id}">Подробнее</a></p>
+        <p><b>${photo.title}</b> ${photo.price} руб. | <a href="/photos/${photo.id}">Подробнее</a></p>
     </div>
+    <#else>
+    <h3>Фото нет</h3>
 </#list>
 <hr>
 <h3>создать новую подборку</h3>
